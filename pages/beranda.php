@@ -3,14 +3,15 @@
   <div class="container-fluid d-flex vh-100">
     <div class="row justify-content-center align-items-center">
       <div class="col-md-5 col-xl-6">
-        <img class="img-fluid" src="assets/img/hero.svg" alt="" />
+        <img class="img-fluid" src="gambar/hero.svg" alt="" />
       </div>
       <div class="col-md-5 col-xl-5">
         <h1 class="display-5 fw-bold lh-1">Make sure have healthy dental.</h1>
         <p class="lead">It's time to consult.</p>
         <div class="d-grid gap-2 d-flex justify-content-md-start mb-4 mb-lg-3">
           <button type="button" class="btn btn-lg btn-info text-light px-4 me-md-2">Book Your Appointment</button>
-          <button type="button" class="btn btn-lg btn-warning px-4 me-md-2">Consult</button>
+          <!-- <button type="button" class="btn btn-lg btn-warning px-4 me-md-2">Consult</button> -->
+          <a class="btn btn-lg btn-warning px-4 me-md-2 text-white" href="./diagnosa">Consult</a>
         </div>
       </div>
     </div>
@@ -46,96 +47,48 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-lg-3 mb-2 mb-lg-4">
-        <div class="card text-center">
-          <div class="card-header bg-transparent">Restorative</div>
-          <div class="card-body">
-            <img class="card-img-top" src="assets/img/dentist-01.jpg" alt="" />
-          </div>
-          <div class="card-footer bg-transparent border-0">
-            <p class="card-text fw-light">Perawatan terhadap gigi berlubang atau rusak dengan menggunakan biomaterial.</p>
+      <div class="row">
+        <div class="col-lg-3 mb-2 mb-lg-4">
+          <div class="card text-center">
+            <div class="card-header bg-info text-white">Restorative</div>
+            <div class="card-body">
+              <img class="card-img-top" src="gambar/dentist-01.jpg" alt="" />
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <p class="card-text fw-light">Perawatan terhadap gigi berlubang atau rusak dengan menggunakan biomaterial.</p>
+            </div>
           </div>
         </div>
-      </div>
+
+        <div class="col-lg-3 mb-2 mb-lg-4">
+          <div class="card text-center">
+            <div class="card-header bg-info text-white">Orthodontic</div>
+            <div class="card-body">
+              <img class="card-img-top" src="gambar/dentist-01.jpg" alt="" />
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <p class="card-text fw-light">Perawatan untuk memperbaiki posisi maupun inklinasi gigi yang tidak tepat.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 mb-2 mb-lg-4">
+          <div class="card text-center">
+            <div class="card-header bg-info text-white">Prosthodontic</div>
+            <div class="card-body">
+              <img class="card-img-top" src="gambar/dentist-01.jpg" alt="" />
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <p class="card-text fw-light">Perawatan untuk merestorasi daerah tidak bergigi atau kehilangan gigi.</p>
+            </div>
+          </div>
+        </div>
 
       <div class="col-lg-3 mb-2 mb-lg-4">
         <div class="card text-center">
-          <div class="card-header bg-transparent">Orthodontic</div>
+          <div class="card-header bg-info text-white">Veneer</div>
           <div class="card-body">
-            <img class="card-img-top" src="assets/img/dentist-01.jpg" alt="" />
-          </div>
-          <div class="card-footer bg-transparent border-0">
-            <p class="card-text fw-light">Perawatan untuk memperbaiki posisi maupun inklinasi gigi yang tidak tepat.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 mb-2 mb-lg-4">
-        <div class="card text-center">
-          <div class="card-header bg-transparent">Prosthodontic</div>
-          <div class="card-body">
-            <img class="card-img-top" src="assets/img/dentist-01.jpg" alt="" />
-          </div>
-          <div class="card-footer bg-transparent border-0">
-            <p class="card-text fw-light">Perawatan untuk merestorasi daerah tidak bergigi atau kehilangan gigi.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 mb-2 mb-lg-4">
-        <div class="card text-center">
-          <div class="card-header bg-transparent">Oral Surgery</div>
-          <div class="card-body">
-            <img class="card-img" src="assets/img/dentist-01.jpg" alt="" />
-          </div>
-          <div class="card-footer bg-transparent border-0">
-            <p class="card-text fw-light">Perawatan terhadap bedah gigi dan mulut umum, khusus maupun mikro.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 mb-2 mb-lg-4">
-        <div class="card text-center">
-          <div class="card-header bg-transparent">Periodontic</div>
-          <div class="card-body">
-            <img class="card-img-top" src="assets/img/dentist-01.jpg" alt="" />
-          </div>
-          <div class="card-footer bg-transparent border-0">
-            <p class="card-text fw-light">Perawatan jaringan lunak maupun keras pendukung gigi, gusi, tulang rahang.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 mb-2 mb-lg-4">
-        <div class="card text-center">
-          <div class="card-header bg-transparent">Dental Implant</div>
-          <div class="card-body">
-            <img class="card-img-top" src="assets/img/dentist-01.jpg" alt="" />
-          </div>
-          <div class="card-footer bg-transparent border-0">
-            <p class="card-text fw-light">Perawatan restorasi kehilangan gigi dengan Implan Gigi secara permanen.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 mb-2 mb-lg-4">
-        <div class="card text-center">
-          <div class="card-header bg-transparent">Endodontic</div>
-          <div class="card-body">
-            <img class="card-img-top" src="assets/img/dentist-01.jpg" alt="" />
-          </div>
-          <div class="card-footer bg-transparent border-0">
-            <p class="card-text fw-light">Perawatan untuk saraf gigi pada jaringan pulpa gigi atau periradicular yang terinfeksi.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 mb-2 mb-lg-4">
-        <div class="card text-center">
-          <div class="card-header bg-transparent">Veneer</div>
-          <div class="card-body">
-            <img class="card-img-top" src="assets/img/dentist-01.jpg" alt="" />
+            <img class="card-img-top" src="gambar/dentist-01.jpg" alt="" />
           </div>
           <div class="card-footer bg-transparent border-0">
             <p class="card-text fw-light">Perawatan permukaan depan gigi dengan memperbaiki fungsi dan estetika.</p>
@@ -157,7 +110,7 @@
     <div class="row">
       <div class="col-md-12 d-grid justify-content-center">
         <div class="text-center">
-          <img class="rounded-circle mb-2" src="assets/img/female-avatar.svg" alt="" width="200" height="200" />
+          <img class="rounded-circle mb-2" src="gambar/dokter.jpeg" alt="" width="200" height="200" />
           <div class="card-title">
             <h5>drg. Riri Fitria Geofani</h5>
           </div>

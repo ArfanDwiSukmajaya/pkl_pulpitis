@@ -9,7 +9,6 @@ switch ($_GET['act']) {
     $jk = $_POST['jk'];
     $umur = $_POST['umur'];
 
-    $arcolor = array('#ffffff', '#cc66ff', '#019AFF', '#00CBFD', '#00FEFE', '#A4F804', '#FFFC00', '#FDCD01', '#FD9A01', '#FB6700');
     date_default_timezone_set("Asia/Jakarta");
     $inptanggal = date('Y-m-d H:i:s');
 
@@ -106,17 +105,22 @@ switch ($_GET['act']) {
     mysqli_query($conn, "INSERT INTO hasil( nama, jk, umur, tanggal, gejala, penyakit, hasil_id, hasil_nilai) 
                          VALUES('$nama', '$jk', '$umur', '$inptanggal', '$inpgejala', '$inppenyakit', '$idpkt1[1]', '$vlpkt1[1]')
                         "); ?>
-
-    <h2 class='text text-success'>Hasil Diagnosis &nbsp;&nbsp;</h2>
-    <button class='btn btn-primary' id='print' onClick='window.print();' data-toggle='tooltip' data-placement='right' title='Klik tombol ini untuk mencetak hasil diagnosa'>
-    <i class='fa fa-print'></i> Cetak
+    <div class="container my-5 shadow-lg p-4 p-md-5 mb-4">
+    <h2 class='text text-success'>Hasil Diagnosis</h2>
+    <button class='btn btn-primary ms-auto float-end mb-4 ' id='print' onClick='window.print();' data-toggle='tooltip' data-placement='right' title='Klik tombol ini untuk mencetak hasil diagnosa'>
+    <i class=''></i> Cetak
     </button>
-    <hr>
-    <p>Nama : <?= $nama ?> </p>
-    <p>Jenis Kelmain : <?= $jk ?>  </p>
-    <p>Umur : <?= $umur ?> </p>
+    <div class="clear-both" style="clear:both"></div>
+    <div class="card text-white mb-3 card border-success">
+      <div class="card-header bg-success">Data Pasien</div>
+      <div class="card-body text-dark">
+       <p>Nama : <b> <?= $nama ?> </b></p>
+        <p>Jenis Kelmain : <b> <?= $jk ?>  </b> </p>
+        <p>Umur : <b> <?= $umur ?> </b> </p>
+      </div>
+    </div>
     <table class='table table-bordered table-striped diagnosa'> 
-      <tr class='bg-success text-white'>
+      <tr class=''>
         <th width=8%>No</th>
         <th width=10%>Kode</th>
         <th>Gejala yang dialami (keluhan)</th>
@@ -136,7 +140,7 @@ switch ($_GET['act']) {
         <td><?= $ig ?></td>
         <td>G<?= str_pad($r4['kode_gejala'], 3, '0', STR_PAD_LEFT) ?> </td>
         <td><span class="hasil text"><?= $r4['nama_gejala']  ?>   </span></td>  
-        <td><span class="kondisipilih" style="color:' . $arcolor[$kondisi] . '"><?= $arkondisitext[$kondisi] ?></span></td>
+        <td><span class="kondisipilih"><?= $arkondisitext[$kondisi] ?></span></td>
       </tr>
     <?php endforeach ?>
     <?php 
@@ -153,47 +157,44 @@ switch ($_GET['act']) {
       $gambar = 'gambar/noimage.png';
     } ?>
     </table>
-      <div class='well well-small'>
-        <img class='card-img-top img-bordered-sm' style='float:right; margin-left:15px;' src='" . $gambar . "' height=200>
-        <h3>Hasil Diagnosa</h3> 
-        <div class='callout callout-default'>Jenis penyakit yang diderita adalah 
-          <b><h3 class='text text-success'><?= $nmpkt[1] ?></b> = <?= round($vlpkt[1], 2) ?>  % / <?= $vlpkt[1]  ?>
-          <br>
-          </h3>
-        </div>
-      </div>
 
-      <div class='box box-info box-solid'>
-        <div class='box-header with-border'>
-          <h3 class='box-title'>Detail</h3>
-        </div>
-        <div class='box-body'>
-          <h4> <?= $ardpkt[$idpkt[1]]  ?></h4>
-        </div>
-      </div>
+    <div class='well well-small'>
+      <!-- <img class='card-img-top img-bordered-sm' style='float:right; margin-left:15px;' src='" . <?= $gambar ?> . "' height=200> -->
+    <h3>Hasil Diagnosa</h3> 
 
-      <div class='box box-warning box-solid'>
-        <div class='box-header with-border'>
-          <h3 class='box-title'>Saran</h3>
-        </div>
-        <div class='box-body'>
-          <h4> <?= $arspkt[$idpkt[1]] ?></h4>
-        </div>
+    <div class="card text-white mb-3 card border-success">
+      <div class="card-header bg-success">Jenis penyakit yang diderita adalah</div>
+      <div class="card-body text-dark">
+      <h3 class='text text-success'><?= $nmpkt[1] ?></> = <?= round($vlpkt[1], 2) ?> % / <?= $vlpkt[1]  ?>
       </div>
+      <div class="card-header text-dark">Detail</div>
+      <div class="card-body text-dark">
+      <p> <?= $ardpkt[$idpkt[1]]  ?></p>
+      </div>
+    </div>
 
-      <div class='box box-danger box-solid'>
-        <div class='box-header with-border'>
-          <h3 class='box-title'>Kemungkinan lain:</h3>
-        </div>
-        <div class='box-body'>
-          <?php  for ($ipl = 2; $ipl < count($idpkt); $ipl++) { ?>
-          <h4><i class='fa fa-caret-square-o-right'></i> <?= $nmpkt[$ipl] ?> </b> =  <?= round($vlpkt[$ipl], 2) ?>  %  <?= $vlpkt[$ipl] ?>  <br></h4>
-          <?php } ?>
-        </div>
+    <div class="card text-white mb-3 card border-warning">
+      <div class="card-header bg-warning">Saran</div>
+      <div class="card-body text-dark">
+      <p> <?= $arspkt[$idpkt[1]] ?></p>
       </div>
+    </div>
+
+    <div class="card text-white mb-3 card border-danger">
+      <div class="card-header bg-danger">Kemungkinan lain</div>
+      <div class="card-body text-dark">
+      <?php  for ($ipl = 2; $ipl < count($idpkt); $ipl++) { ?>
+        <p><i class='fa fa-caret-square-o-right'></i> <?= $nmpkt[$ipl] ?> </b> =  <?= round($vlpkt[$ipl], 2) ?>  %  <?= $vlpkt[$ipl] ?>  <br></h4>
+        <?php } ?>
+      </div>
+    </div>
+    </div>
+    </div>
+
+
 <?php }else{ ?>
-
-  <h2 class='text text-secondary mb-4'>Diagnosa Penyakit</h2>  
+  <div class="container shadow p-3 mb-5 bg-body rounded">
+  <h2 class='mb-4'>Diagnosa Penyakit</h2>  
 
   <div class='alert alert-success alert-dismissible fade show' role='alert'>
     <strong>Perhatian</strong> Silahkan isi data diri anda terlebih dahulu kemudian memilih gejala sesuai dengan kondisi gigi anda, anda dapat memilih kepastian kondisi gigi anda dari pasti tidak sampai pasti ya, jika sudah tekan <Strong>Tombol proses</Strong> di bawah untuk melihat hasil.
@@ -225,10 +226,6 @@ switch ($_GET['act']) {
         </div>
       </div>
     </div>
-  
-
-
-  
 
     <table class='table table-bordered table-striped konsultasi'>
       <tbody class='pilihkondisi'>
@@ -236,7 +233,7 @@ switch ($_GET['act']) {
           <th>No</th>
           <th>Kode</th>
           <th>Gejala</th>
-          <th width='20%'>Pilih Kondisi</th>
+          <th>Pilih Kondisi</th>
         </tr>
         <?php  
         $sql3 = mysqli_query($conn, "SELECT * FROM gejala order by kode_gejala");
@@ -248,8 +245,8 @@ switch ($_GET['act']) {
           <td class=opsi>G<?= str_pad($r3['kode_gejala'], 2, '0', STR_PAD_LEFT) ?></td>
           <td class=gejala> <?= $r3['nama_gejala'] ?></td>
           <td class="opsi">
-          <select name="kondisi[]" id="sl' . <?= $i ?> . '" class="opsikondisi"/>
-            <option data-id="0" value="0">Pilih jika sesuai</option>';
+          <select name="kondisi[]" id="sl' . <?= $i ?> . '"  class="form-select" aria-label="Default select example"/>
+            <option data-id="0" value="0" selected>Pilih jika sesuai</option>';
             <?php 
             $s = "SELECT * FROM kondisi ORDER BY id";
             $q = mysqli_query($conn, $s) or die($s);
@@ -257,7 +254,7 @@ switch ($_GET['act']) {
               <option data-id="<?php echo $rw['id']; ?>" value="<?php echo $r3['kode_gejala'] . '_' . $rw['id']; ?>"><?php echo $rw['kondisi']; ?></option>
             <?php endwhile ?>
           </select>
-          </td>          
+          </td>
         </tr>
         <?php endwhile ?>
       </tbody>
@@ -267,7 +264,11 @@ switch ($_GET['act']) {
     </div><br>
 
   </form>
+  </div>
+  
   <?php
   }
   break;
 }
+
+

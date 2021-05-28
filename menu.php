@@ -19,8 +19,12 @@
   <li class='nav-item'>
     <a <?php if ($page == 'pengetahuan') echo 'class="nav-link active"';?> class='nav-link' aria-current='page' href='pengetahuan'>Pengetahuan</a>
   </li>
+  <li class='nav-item'>
+    <a <?php if ($page == 'riwayat') echo 'class="nav-link active"';?> class='nav-link' aria-current='page' href='riwayat'>Riwayat</a>
+  </li>
 
 <?php endif;  ?>
+
 
 <li class='nav-item'>
   <a <?php if ($page == 'tentang') echo 'class="nav-link active"';?> class='nav-link' aria-current='page' href='tentang'>Tentang Kami</a>

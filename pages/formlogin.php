@@ -1,51 +1,54 @@
-<!-- <script type="text/javascript">
-function Blank_TextField_Validator()
-{
-if (text_form.username.value == "")
-{
-   alert("Isi dulu username !");
-   text_form.username.focus();
-   return (false);
-}
-if (text_form.password.value == "")
-{
-   alert("Isi dulu password !");
-   text_form.password.focus();
-   return (false);
-}
-return (true);
-}
+<?php
+session_start();
+include "config/koneksi.php";
 
-</script> -->
+if(isset($_POST["login"])){
 
-<div class="ayaem">
-  <div class="hand"></div>
-  <div class="hand hand-r"></div>
-  <div class="arms">
-    <div class="arm"></div>
-    <div class="arm arm-r"></div>
+  $user=$_POST['username'];
+  $pass=md5($_POST['password']);
+
+  $login=mysqli_query($conn,"select * from admin where username='$user' and password='$pass'");
+
+  $ketemu=mysqli_num_rows($login);
+  $r=mysqli_fetch_array($login);
+  if ($ketemu>0) {
+    $_SESSION['username'] = $r['username'];
+    $_SESSION['password'] = $r['password'];
+    $_SESSION['nama_lengkap'] = $r['nama_lengkap'];
+    header("location: ./");
+  }else{
+    $error = true;
+  }
+}
+?>
+
+<title>Form Login</title>
+
+  
+<div class="row justify-content-center">
+<div class="col-md-4 col-lg-5 container my-5 shadow-lg p-4 p-md-5">
+  
+  <?php if(isset($error)) : ?>
+    <div class="alert alert-danger" role="alert">
+      Username / Password Salah
+    </div>
+  <?php endif; ?>
+
+  <h3 class="text-center mb-4">Login Admin</h3> 
+  <form action="" method="post" name="text_form" class="login-form">
+  <div class="form-group">
+    <input type="text"  name="username" id="username" class="form-control rounded-left mb-3" placeholder="Username" required>
   </div>
-</div>
-<div class="formku">
-   <div class="info">
-    <h4><i class="fa fa-paper-plane"></i> Login Pakar</h4><br>
+  <div class="form-group d-flex">
+    <input type="password" name="password" id="password" class="form-control rounded-left mb-4" placeholder="Password" required>
   </div>
-  <form class="login-form" action="login.php" method="post" name="text_form" onsubmit="return Blank_TextField_Validator()">
-<input type="text" name="username" id="username" placeHolder="&#xf007;  Username" style="font-family:Arial, FontAwesome" />
-<input type="password" name="password" id="password" placeHolder="&#xf023;  Password" style="font-family:Arial, FontAwesome" />
-<input type="submit" name="submit" id="submitku" value="   Login   " /><br>
- <!-- <p class="message">Ingin mendaftar? <a href="https://goo.gl/forms/OlZywbPBrBcG2nSy1" target="_blank">Ajukan Permohonan</a></p> -->
+  <div class="form-group d-md-flex">
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary rounded" name="login">Login</button>
+    </div>
+  </div>
   </form>
 </div>
-
-<script>
-$('input[type="password"]').on('focus', () => {
-  $('*').addClass('password');
-}).on('focusout', () => {
-  $('*').removeClass('password');
-});;
-</script>
-<script>
-var d = document.getElementById("pakarayam");
-d.className += " sidebar-collapse";
-</script>
+</div>
+</div>
+</div>
