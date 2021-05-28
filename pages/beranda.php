@@ -55,7 +55,7 @@
               <img class="card-img-top" src="gambar/dentist-01.jpg" alt="" />
             </div>
             <div class="card-footer bg-transparent border-0">
-              <p class="card-text fw-light">Perawatan terhadap gigi berlubang atau rusak dengan menggunakan biomaterial.</p>
+              <p class="card-text fw-light">Perawatan gigi berlubang, rusak dengan menggunakan biomaterial.</p>
             </div>
           </div>
         </div>
@@ -67,7 +67,7 @@
               <img class="card-img-top" src="gambar/dentist-01.jpg" alt="" />
             </div>
             <div class="card-footer bg-transparent border-0">
-              <p class="card-text fw-light">Perawatan untuk memperbaiki posisi maupun inklinasi gigi yang tidak tepat.</p>
+              <p class="card-text fw-light">Perawatan untuk memperbaiki posisi, inklinasi gigi yang tidak tepat.</p>
             </div>
           </div>
         </div>
@@ -91,7 +91,7 @@
             <img class="card-img-top" src="gambar/dentist-01.jpg" alt="" />
           </div>
           <div class="card-footer bg-transparent border-0">
-            <p class="card-text fw-light">Perawatan permukaan depan gigi dengan memperbaiki fungsi dan estetika.</p>
+            <p class="card-text fw-light">Perawatan permukaan depan gigi dengan memperbaiki estetika.</p>
           </div>
         </div>
       </div>
@@ -110,7 +110,7 @@
     <div class="row">
       <div class="col-md-12 d-grid justify-content-center">
         <div class="text-center">
-          <img class="rounded-circle mb-2" src="gambar/dokter.jpeg" alt="" width="200" height="200" />
+          <img class="rounded-circle mb-2" src="gambar/dokter.jpeg" alt="" width="250" height="250" />
           <div class="card-title">
             <h5>drg. Riri Fitria Geofani</h5>
           </div>

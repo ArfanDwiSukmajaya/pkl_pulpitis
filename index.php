@@ -10,7 +10,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <base href="http://localhost/pulpitis/">
+    <base href="http://localhost/pkl_pulpitis/">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="aset/bootstrap.min.css" />
