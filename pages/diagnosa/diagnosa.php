@@ -165,7 +165,7 @@ switch ($_GET['act']) {
     <div class="card text-white mb-3 card border-success">
       <div class="card-header bg-success">Jenis penyakit yang diderita adalah</div>
       <div class="card-body text-dark">
-      <h3 class='text text-success'><?= $nmpkt[1] ?></> = <?= round($vlpkt[1], 2) ?> % / <?= $vlpkt[1]  ?>
+      <h3 class='text text-success'><?= $nmpkt[1] ?></> = <?= round(substr($vlpkt[1], 2)) ?> % / <?= $vlpkt[1]  ?>
       </div>
       <div class="card-header text-dark">Detail</div>
       <div class="card-body text-dark">
