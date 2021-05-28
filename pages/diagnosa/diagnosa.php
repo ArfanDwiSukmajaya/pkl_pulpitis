@@ -165,7 +165,7 @@ switch ($_GET['act']) {
     <div class="card text-white mb-3 card border-success">
       <div class="card-header bg-success">Jenis penyakit yang diderita adalah</div>
       <div class="card-body text-dark">
-      <h3 class='text text-success'><?= $nmpkt[1] ?></> = <?= round($vlpkt[1], 2) ?> % / <?= $vlpkt[1]  ?>
+      <h3 class='text text-success'><?= $nmpkt[1];  $penyakit = round($vlpkt[1], 2) * 100 ?> = <?= $penyakit ?> % / <?= $vlpkt[1]  ?>
       </div>
       <div class="card-header text-dark">Detail</div>
       <div class="card-body text-dark">
@@ -184,7 +184,7 @@ switch ($_GET['act']) {
       <div class="card-header bg-danger">Kemungkinan lain</div>
       <div class="card-body text-dark">
       <?php  for ($ipl = 2; $ipl < count($idpkt); $ipl++) { ?>
-        <p><i class='fa fa-caret-square-o-right'></i> <?= $nmpkt[$ipl] ?> </b> =  <?= round($vlpkt[$ipl], 2) ?>  %  <?= $vlpkt[$ipl] ?>  <br></h4>
+        <p><i class='fa fa-caret-square-o-right'></i> <?= $nmpkt[$ipl] ?> </b> =  <?= round($vlpkt[$ipl], 2) * 100 ?>  %  <?= $vlpkt[$ipl] ?>  <br></h4>
         <?php } ?>
       </div>
     </div>
