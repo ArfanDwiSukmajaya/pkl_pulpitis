@@ -52,7 +52,7 @@
             <?php if(isset($_SESSION['username']) && isset($_SESSION['password'])) : ?>
               <div class="dropdown">
                 <a <?php if($page == 'admin' || $page == 'password' || $page == 'logout') echo 'class="dropdown-toggle nav-link active"';  ?>   class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                <?php echo $_SESSION['username'] ?> </a>
+                <?php echo $_SESSION['nama_lengkap'] ?> </a>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                   <li><a class="dropdown-item" <?php if ($page == 'admin') ?> href="admin">Daftar Admin</a></li>
