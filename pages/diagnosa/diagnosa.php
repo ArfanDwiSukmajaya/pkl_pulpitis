@@ -12,7 +12,7 @@ switch ($_GET['act']) {
     date_default_timezone_set("Asia/Jakarta");
     $inptanggal = date('Y-m-d H:i:s');
 
-    $arbobot = array('0', '1', '0.8', '0.6', '0.4', '-0.2', '-0.4', '-0.6', '-0.8', '-1');
+    $arbobot = array('0', '1', '0.8', '0.6', '0.4', '-1');
     $argejala = array();
 
     for ($i = 0; $i < count($_POST['kondisi']); $i++) {
@@ -246,7 +246,7 @@ switch ($_GET['act']) {
           <td class=gejala> <?= $r3['nama_gejala'] ?></td>
           <td class="opsi">
           <select name="kondisi[]" id="sl' . <?= $i ?> . '"  class="form-select" aria-label="Default select example"/>
-            <option data-id="0" value="0" selected>Pilih jika sesuai / Pasti tidak</option>';
+            <option data-id="0" value="0" selected>Pilih jika sesuai </option>';
             <?php 
             $s = "SELECT * FROM kondisi ORDER BY id";
             $q = mysqli_query($conn, $s) or die($s);
