@@ -152,7 +152,7 @@ switch ($_GET['act']) {
       $vlpkt[$np] = $value;
     }
     if ($argpkt[$idpkt[1]]) {
-      $gambar = 'gambar/penyakit/' . $argpkt[$idpkt[1]];
+      // $gambar = 'gambar/penyakit/' . $argpkt[$idpkt[1]];
     } else {
       $gambar = 'gambar/noimage.png';
     } ?>
@@ -165,7 +165,7 @@ switch ($_GET['act']) {
     <div class="card text-white mb-3 card border-success">
       <div class="card-header bg-success">Jenis penyakit yang diderita adalah</div>
       <div class="card-body text-dark">
-      <h3 class='text text-success'><?= $nmpkt[1];  $penyakit = round($vlpkt[1], 2) * 100 ?> = <?= $penyakit ?> % / <?= $vlpkt[1]  ?>
+      <h3 class='text text-success'><?= $nmpkt[1];  $penyakit = round($vlpkt[1], 5) * 100 ?> = <?= $penyakit ?> % / <?= round($vlpkt[1], 2)  ?>
       </div>
       <div class="card-header text-dark">Detail</div>
       <div class="card-body text-dark">
