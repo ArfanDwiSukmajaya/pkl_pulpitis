@@ -184,7 +184,7 @@ switch ($_GET['act']) {
       <div class="card-header bg-danger">Kemungkinan lain</div>
       <div class="card-body text-dark">
       <?php  for ($ipl = 2; $ipl < count($idpkt); $ipl++) { ?>
-        <p><i class='fa fa-caret-square-o-right'></i> <?= $nmpkt[$ipl] ?> </b> =  <?= round($vlpkt[$ipl], 2) * 100 ?>  %  <?= $vlpkt[$ipl] ?>  <br></h4>
+        <p><i class='fa fa-caret-square-o-right'></i> <?= $nmpkt[$ipl] ?> </b> =  <?= round($vlpkt[$ipl], 2) * 100 ?>  %  ( <?= $vlpkt[$ipl] ?> )  <br></h4>
         <?php } ?>
       </div>
     </div>
@@ -246,7 +246,7 @@ switch ($_GET['act']) {
           <td class=gejala> <?= $r3['nama_gejala'] ?></td>
           <td class="opsi">
           <select name="kondisi[]" id="sl' . <?= $i ?> . '"  class="form-select" aria-label="Default select example"/>
-            <option data-id="0" value="0" selected>Pilih jika sesuai </option>';
+            <option data-id="0" value="0" selected>Apakah merasakan</option>';
             <?php 
             $s = "SELECT * FROM kondisi ORDER BY id";
             $q = mysqli_query($conn, $s) or die($s);
