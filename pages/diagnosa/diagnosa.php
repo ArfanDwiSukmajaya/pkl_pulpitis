@@ -246,7 +246,7 @@ switch ($_GET['act']) {
           <td class=gejala> <?= $r3['nama_gejala'] ?></td>
           <td class="opsi">
           <select name="kondisi[]" id="sl' . <?= $i ?> . '"  class="form-select" aria-label="Default select example"/>
-            <option data-id="0" value="0" selected>Pilih jika sesuai</option>';
+            <option data-id="0" value="0" selected>Pilih jika sesuai / Pasti tidak</option>';
             <?php 
             $s = "SELECT * FROM kondisi ORDER BY id";
             $q = mysqli_query($conn, $s) or die($s);
